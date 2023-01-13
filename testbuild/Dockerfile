@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM alpine/git
 run mkdir /test
 run cd /test
 run apt install git
