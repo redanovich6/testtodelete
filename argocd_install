@@ -12,8 +12,10 @@ https://github.com/operator-framework/operator-lifecycle-manager/releases/downlo
 oc rollout status -w deployment/olm-operator -n olm
 oc rollout status -w deployment/catalog-operator -n olm
 oc rollout status -w deployment/packageserver -n olm
- ## wit end 
+ ## wait deployment end 
 
+git clone https://github.com/disposab1e/argocd-operator-helm.git
+cd argocd-operator-helm/
 
 oc apply -f guides/ocp3/olm/namespace.yaml
 oc apply -f guides/ocp3/olm/catalog-source.yaml
@@ -21,6 +23,7 @@ oc apply -f guides/ocp3/olm/operator-group.yaml
 oc apply -f guides/ocp3/olm/subscription.yaml
 oc apply -f guides/ocp3/olm/role-binding.yaml
 
+ ## wait deployment end 
 
 
 oc rollout status -w deployment/argocd-operator-helm -n argocd
@@ -29,6 +32,8 @@ oc rollout status -w deployment/argocd-operator-helm -n argocd
 oc apply -f examples/ocp-oauth.yaml -n argocd
 
 oc get ArgoCDs argocd -n argocd
+
+ ## wait deployment end 
 
 oc rollout status -w deployment/argocd-application-controller -n argocd
 oc rollout status -w deployment/argocd-dex-server -n argocd
