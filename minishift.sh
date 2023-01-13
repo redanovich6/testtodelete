@@ -14,3 +14,7 @@ sudo mkdir /minioc && sudo chmod 777 /minioc && cd /minioc
 wget -qO- https://github.com/minishift/minishift/releases/download/v1.34.3/minishift-1.34.3-linux-amd64.tgz | tar xvz
 export PATH=/minioc/minishift-1.34.3-linux-amd64:$PATH
 minishift start
+eval $(minishift oc-env)
+oc login -u system:admin
+oc create ns sostrades
+oc project sostrades
