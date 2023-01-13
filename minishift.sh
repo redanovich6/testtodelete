@@ -18,3 +18,4 @@ eval $(minishift oc-env)
 oc login -u system:admin
 oc create ns sostrades
 oc project sostrades
+oc adm policy add-cluster-role-to-user cluster-admin admin --as=system:admin
