@@ -19,3 +19,6 @@ oc login -u system:admin
 oc create ns sostrades
 oc project sostrades
 oc adm policy add-cluster-role-to-user cluster-admin admin --as=system:admin
+## access to console with admin user
+oc login -u admin -p admin
+docker login -u admin -p $(oc whoami -t) $(minishift openshift registry)
